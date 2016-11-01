@@ -1,0 +1,13 @@
+sudo: required
+
+language: python
+
+services:
+  - docker
+
+before_install:
+  - docker build -t test .
+
+script:
+  #- docker run test pylint flatten.py
+  - docker run test python flatten.test.py
